@@ -4,11 +4,15 @@
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
 	<?php echo Asset::css('bootstrap.css'); ?>
-	<style>
-		body { margin: 40px; }
-	</style>
 </head>
 <body>
+  <div class="navbar navbar-inner">
+    <a class="brand">Try fuel!!</a>
+    <ul class="nav">
+      <li class="active"><a>Home</a></li>
+      <li><a href="#">Upload</a></li>
+    </ul>
+  </div>
 	<div class="container">
 		<div class="row">
 			<div class="span16">
