@@ -33,8 +33,10 @@
 				</div>
 <?php endif; ?>
 			</div>
+    </div>
+    <div class="row">
 			<div class="span16">
-<?php echo $content; ?>
+        <?php echo $content; ?>
 			</div>
 		</div>
 		<footer>
