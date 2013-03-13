@@ -48,4 +48,9 @@
 		</footer>
 	</div>
 </body>
+<script>
+  var BASE_URL = '<?php echo Uri::base(true); ?>';
+</script>
+<?php echo Asset::js('config-require.js'); ?>
+<?php echo Asset::js('require.js', array('data-main' => 'main')); ?>
 </html>
