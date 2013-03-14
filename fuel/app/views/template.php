@@ -10,19 +10,15 @@
     <a class="brand">Try fuel!!</a>
     <ul class="nav">
       <?php
-         if (Uri::segment(1) == '') {
-         echo '<li class="active"><a>Home</a></li>';
-         } else {
-         echo '<li><a href=".">Home</a></li>';
-         }
-         ?>
-      <?php
-         if (Uri::segment(1) == 'upload') {
-         echo '<li class="active"><a>Upload</a></li>';
-         } else {
-         echo '<li><a href="upload">Upload</a></li>';
-         }
-         ?>
+      $features = array('' => 'Home', 'upload' => 'Upload');
+      foreach($features as $key => $value) {
+        if (Uri::segment(1) == $key) {
+          echo "<li class=\"active\"><a>$value</a></li>";
+        } else {
+          echo "<li><a href=\"$key\">$value</a></li>";
+        }
+      }
+      ?>
     </ul>
   </div>
 	<div class="container">
