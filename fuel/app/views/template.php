@@ -9,8 +9,20 @@
   <div class="navbar navbar-inner">
     <a class="brand">Try fuel!!</a>
     <ul class="nav">
-      <li class="active"><a>Home</a></li>
-      <li><a href="#">Upload</a></li>
+      <?php
+         if (Uri::segment(1) == '') {
+         echo '<li class="active"><a>Home</a></li>';
+         } else {
+         echo '<li><a href=".">Home</a></li>';
+         }
+         ?>
+      <?php
+         if (Uri::segment(1) == 'upload') {
+         echo '<li class="active"><a>Upload</a></li>';
+         } else {
+         echo '<li><a href="upload">Upload</a></li>';
+         }
+         ?>
     </ul>
   </div>
 	<div class="container">
