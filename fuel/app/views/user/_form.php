@@ -10,10 +10,10 @@
 			</div>
 		</div>
 		<div class="clearfix">
-			<?php echo Form::label('Role', 'role'); ?>
+			<?php echo Form::label('RoleId', 'role_id'); ?>
 
 			<div class="input">
-				<?php echo Form::input('role', Input::post('role', isset($user) ? $user->role : ''), array('class' => 'span4')); ?>
+				<?php echo Form::input('role_id', Input::post('role_id', isset($user) ? $user->role_id : ''), array('class' => 'span4')); ?>
 
 			</div>
 		</div>

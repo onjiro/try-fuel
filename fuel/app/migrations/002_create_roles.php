@@ -2,14 +2,13 @@
 
 namespace Fuel\Migrations;
 
-class Create_users
+class Create_roles
 {
 	public function up()
 	{
-		\DBUtil::create_table('users', array(
+		\DBUtil::create_table('roles', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true),
 			'name' => array('constraint' => 255, 'type' => 'varchar'),
-			'role_id' => array('constraint' => 11, 'type' => 'int'),
 			'created_at' => array('type' => 'timestamp', 'null' => true),
 			'updated_at' => array('type' => 'timestamp', 'null' => true),
 			'deleted_at' => array('type' => 'timestamp', 'null' => true),
@@ -19,6 +18,6 @@ class Create_users
 
 	public function down()
 	{
-		\DBUtil::drop_table('users');
+		\DBUtil::drop_table('roles');
 	}
 }

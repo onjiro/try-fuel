@@ -5,6 +5,12 @@ class Controller_User extends Controller_Template
 	public function action_index()
 	{
 		$data['users'] = Model_User::find('all');
+    if ($data['users'] !== null) {
+      array_walk($data['users'], function($user) {
+          Debug::dump($user);
+          Debug::dump($user->role);
+        });
+    }
 		$this->template->title = "Users";
 		$this->template->content = View::forge('user/index', $data);
 
@@ -35,7 +41,7 @@ class Controller_User extends Controller_Template
 			{
 				$user = Model_User::forge(array(
 					'name' => Input::post('name'),
-					'role' => Input::post('role'),
+					'role_id' => Input::post('role_id'),
 				));
 
 				if ($user and $user->save())

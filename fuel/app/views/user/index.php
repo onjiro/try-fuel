@@ -5,7 +5,8 @@
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Role</th>
+			<th>RoleId</th>
+			<th>Role.Name</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -13,7 +14,8 @@
 <?php foreach ($users as $user): ?>		<tr>
 
 			<td><?php echo $user->name; ?></td>
-			<td><?php echo $user->role; ?></td>
+			<td><?php echo $user->role_id; ?></td>
+			<td><?php echo isset($user->role->name) ? $user->role->name: ''; ?></td>
 			<td>
 				<?php echo Html::anchor('user/view/'.$user->id, 'View'); ?> |
 				<?php echo Html::anchor('user/edit/'.$user->id, 'Edit'); ?> |
